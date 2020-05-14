@@ -6,11 +6,22 @@ import Logo from './components/Logo/Logo'
 import Rank from './components/Rank/Rank'
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Clarifai from 'clarifai';
-/*import Particles from 'react-particles-js';*/
+import Particles from 'react-particles-js';
 import Signin from './components/Signin/Signin.js'
 import Register from './components/Register/Register.js'
 
 
+const particlesOptions = {
+  particles: {
+    number: {
+      value: 30,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    }
+  }
+}
 
 const app = new Clarifai.App({
  apiKey: 'bcd8b4d5f4844dc791077458c0654f44'
@@ -74,7 +85,7 @@ class App extends Component{
       app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.imageUrl)
       .then(response => {
          if(response){
-            fetch('https://damp-hamlet-36731.herokuapp.com/images',{
+            fetch('http://localhost:3000/images',{
                method : 'put',
                headers : {'Content-Type' : 'application/json'},
                body : JSON.stringify({
@@ -109,7 +120,9 @@ class App extends Component{
    render(){
       return (
          <div className="App">
-           {/* <Particles className = "particles" />*/}
+           <Particles className='particles'
+          params={particlesOptions}
+            />
             <Navigation onRouteChange = {this.onRouteChange} 
             isSignedIn = {this.state.isSignedIn} />
             <Logo/>

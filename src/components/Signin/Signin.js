@@ -21,7 +21,7 @@ class Signin extends React.Component{
 	}
 
 	onSubmit = () =>{
-		fetch('https://damp-hamlet-36731.herokuapp.com/signin', {
+		fetch('http://localhost:3000/signin', {
 			method : 'post',
 			headers : {'Content-Type' : 'application/json'},
 			body : JSON.stringify({
@@ -45,9 +45,9 @@ class Signin extends React.Component{
 		const {onRouteChange} = this.props;
 
 		return (
-			<article className="br4 ba b--black-10 mv4 w-100 w-50-m w-25-l  mw6 shodow-5 center">
+			<article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
 				<main className="pa4 black-80">
-				  <form className="measure center">
+				  <form className="measure ">
 				    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
 				      <legend className="f2 fw6 ph0 mh0">Sign In</legend>
 				      <div className="mt3">
