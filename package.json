@@ -1,6 +1,6 @@
 {
   "name": "facedetection",
-  "homepage": "http://rishabh169.github.io/FaceRecognition",
+  "homepage": "https://rishabh169.github.io/FaceRecognition",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
